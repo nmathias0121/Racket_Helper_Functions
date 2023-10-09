@@ -1,5 +1,6 @@
 #lang racket
 (require "racket_1.rkt")
+(require "racket_2.rkt")
 
 '("Tests for length of list")
 (define list_1 (list 1 (list 2 3) 3 5 3))
@@ -55,3 +56,13 @@
 (make-consed '(a b c))
 (make-consed '((a) b c))
 (make-consed '(4 (a ())))
+
+
+'(tests for is-digit?)
+(is-digit? #\4)
+(is-digit? #\9)
+(is-digit? #\0)
+(is-digit? 4)
+(is-digit? "4")
+(is-digit? '(cheese shoes string))
+(andmap is-digit? (string->list "0123456789"))
