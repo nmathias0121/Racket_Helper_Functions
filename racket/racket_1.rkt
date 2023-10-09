@@ -6,6 +6,19 @@ Developer Name : Neil Mathias
 Developer E-mail : neilmathias25@gmail.com
 |#
 
+(provide list_len)
+(provide index-of)
+(provide my-subset?)
+(provide same-set?)
+(provide pairs)
+(provide my-remove-duplicates)
+(provide find-multiples)
+(provide sum)
+(provide length)
+(provide last)
+(provide string-length)
+(provide maximum)
+(provide make-consed)
 ;;
 ; length of list
 (define (list_len lst)
@@ -123,61 +136,6 @@ Developer E-mail : neilmathias25@gmail.com
   (if (empty? x)
       '()
       (if (list? (first x))
-          `(cons cons ,(first (first x)) ,(make-consed (rest x)))
+          `(cons (cons ,(first (first x))) ,(make-consed (rest x)))
           `(cons ,(first x) ,(make-consed (rest x))))))
 
-
-'("Tests for length of list")
-(define list_1 (list 1 (list 2 3) 3 5 3))
-(list_len list_1)
-(define empty_list (list ))
-(list_len empty_list)
-
-'("Tests for linear search")
-(index-of 1 list_1)
-(index-of '(2 3) list_1)
-(index-of 3 empty_list)
-(index-of 5 list_1)
-(index-of 16 '(1 4 9))
-
-'("Tests for subset function")
-(my-subset? '() '())
-(my-subset? '() '(1 2))
-(my-subset? '(2 1 1) '(1 2))
-(my-subset? '(2 1 3) '(1 2))
-(my-subset? '(a d (3 1)) '(1 a (3 d)))
-(my-subset? '((1) (2 2)) '((3 3 3) a (2 2) (1)))
-
-'("Tests for set equality")
-(same-set? '(1 2 3) '(3 1 2))
-(same-set? '(1 2 3 3) '(2 3 1 1 1 2))
-(same-set? '(1 2 3 3) '(2 1 1 1 2))
-(same-set? '(3 1) '(1 2 4 3))
-
-'("Tests for pairing two lists")
-(pairs '(a b c) '(1 2 3))
-(pairs '(a b c) '(1 2))
-(pairs '(a b) '(1 2 3))
-
-'("Tests for remove duplicates")
-(my-remove-duplicates '(1 2 3 2))
-(my-remove-duplicates '(4 4 4))
-(my-remove-duplicates '(up up and a way way))
-
-'("Tests for finding multiples")
-(find-multiples '(a b c))
-(find-multiples '(a b a c))
-(find-multiples '(a b a c c a))           
-(find-multiples '(a b a c c b))
-
-'("Tests for find maximum in a list")
-(maximum sum '((1 2 0 0 2) (9) (2 8 2 -2)))
-(maximum length '((1 2 0 0 2) (9) (2 8 2 -2)))
-(maximum last '((1 2 0 0 2) (9) (2 8 2 -2)))
-(maximum string-length '("one" "two" "three" "four" "five"))
-
-'("Tests for calculating consed-out lists")
-(make-consed '())
-(make-consed '(a b c))
-(make-consed '((a) b c))
-(make-consed '(4 (a ())))
