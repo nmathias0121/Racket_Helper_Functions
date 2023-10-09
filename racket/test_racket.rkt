@@ -66,3 +66,13 @@
 (is-digit? "4")
 (is-digit? '(cheese shoes string))
 (andmap is-digit? (string->list "0123456789"))
+
+'(tests for is-letter?)
+(is-letter? #\m)
+(is-letter? #\a)
+(is-letter? #\Z)
+(is-letter? #\Q)
+(is-letter? 's)
+(is-letter? "T")
+(is-letter? '(cheese shoes string))
+(andmap is-letter? (string->list "OnceUponAtime"))
