@@ -15,14 +15,17 @@ Developer E-mail : neilmathias25@gmail.com
     ))
 
 ;;
-; linear search
-; returns -1 if element not found in list
+; does list contain element : boolean
 
-(define (contains x lst)                    ; does list contain element : boolean
+(define (contains x lst)                    
   (cond [(empty? lst)           #f]
         [(equal? x (first lst)) #t]
         [else (contains x (rest lst))]
     ))
+
+;;
+; linear search
+; returns -1 if element not found in list
 
 (define (index-of x lst)
   (if (contains x lst)
@@ -65,6 +68,55 @@ Developer E-mail : neilmathias25@gmail.com
                 )]
     ))
 
+;;
+; remove duplicates from list
+
+(define (my-remove-duplicates lst)
+  (cond [(empty? lst) empty]
+        [(contains (first lst) (rest lst)) (my-remove-duplicates (rest lst))]
+        [else (cons 
+                (first lst) 
+                (my-remove-duplicates (rest lst)))]
+    ))
+
+
+;;
+; finding multiples
+
+(define (find-multiples lst)
+  (cond [(empty? lst) empty]
+        [(not (contains (first lst) (rest lst))) (find-multiples (rest lst))]
+        [else (my-remove-duplicates (cons (first lst) (find-multiples (rest lst))))]
+    ))
+
+;;
+; list fold right
+
+(define (foldr f init lst)      
+  (if (empty? lst) init
+      (f (first lst) (foldr f init (rest lst))))) 
+
+;;
+; return sum of numbers in list
+
+(define (sum lst)               
+  (foldr + 0 lst))
+ 
+;;
+; maximizing a function as per operation
+; e.g. (maximum sum list_of_lists) returns the list whose sum is the max
+
+(define (maximumNum f lst)
+  (if (empty? lst)
+      0
+      (max (f (first lst)) (maximumNum f (rest lst)))))
+ 
+(define (maximum f lst) 
+  (cond [(empty? lst) 0]
+        [(equal? (f (first lst)) (maximumNum f lst)) (first lst)] 
+        [else (maximum f (rest lst))])) 
+
+
 
 '("Tests for length of list")
 (define list_1 (list 1 (list 2 3) 3 5 3))
@@ -97,3 +149,20 @@ Developer E-mail : neilmathias25@gmail.com
 (pairs '(a b c) '(1 2 3))
 (pairs '(a b c) '(1 2))
 (pairs '(a b) '(1 2 3))
+
+'("Tests for remove duplicates")
+(my-remove-duplicates '(1 2 3 2))
+(my-remove-duplicates '(4 4 4))
+(my-remove-duplicates '(up up and a way way))
+
+'("Tests for finding multiples")
+(find-multiples '(a b c))
+(find-multiples '(a b a c))
+(find-multiples '(a b a c c a))           
+(find-multiples '(a b a c c b))
+
+'("Tests for find maximum in a list")
+(maximum sum '((1 2 0 0 2) (9) (2 8 2 -2)))
+(maximum length '((1 2 0 0 2) (9) (2 8 2 -2)))
+(maximum last '((1 2 0 0 2) (9) (2 8 2 -2)))
+(maximum string-length '("one" "two" "three" "four" "five"))
