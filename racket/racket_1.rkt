@@ -116,6 +116,15 @@ Developer E-mail : neilmathias25@gmail.com
         [(equal? (f (first lst)) (maximumNum f lst)) (first lst)] 
         [else (maximum f (rest lst))])) 
 
+;;
+;9.calculating consed-out lists
+
+(define (make-consed x)
+  (if (empty? x)
+      '()
+      (if (list? (first x))
+          `(cons cons ,(first (first x)) ,(make-consed (rest x)))
+          `(cons ,(first x) ,(make-consed (rest x))))))
 
 
 '("Tests for length of list")
@@ -166,3 +175,9 @@ Developer E-mail : neilmathias25@gmail.com
 (maximum length '((1 2 0 0 2) (9) (2 8 2 -2)))
 (maximum last '((1 2 0 0 2) (9) (2 8 2 -2)))
 (maximum string-length '("one" "two" "three" "four" "five"))
+
+'("Tests for calculating consed-out lists")
+(make-consed '())
+(make-consed '(a b c))
+(make-consed '((a) b c))
+(make-consed '(4 (a ())))
