@@ -44,6 +44,28 @@ Developer E-mail : neilmathias25@gmail.com
         )
     ))
 
+;;
+; set equality
+
+(define (same-set? lst1 lst2)
+  (if (and (my-subset? lst1 lst2) (my-subset? lst2 lst1))
+      #t
+      #f
+    ))
+
+;;
+;5.pair two lists
+
+(define (pairs lst1 lst2)
+  (cond [(empty? lst1) '()]
+        [(empty? lst2) '()]
+        [else (cons 
+                (cons (first lst1) (first lst2)) 
+                (pairs (rest lst1) (rest lst2))
+                )]
+    ))
+
+
 '("Tests for length of list")
 (define list_1 (list 1 (list 2 3) 3 5 3))
 (list_len list_1)
@@ -64,3 +86,14 @@ Developer E-mail : neilmathias25@gmail.com
 (my-subset? '(2 1 3) '(1 2))
 (my-subset? '(a d (3 1)) '(1 a (3 d)))
 (my-subset? '((1) (2 2)) '((3 3 3) a (2 2) (1)))
+
+'("Tests for set equality")
+(same-set? '(1 2 3) '(3 1 2))
+(same-set? '(1 2 3 3) '(2 3 1 1 1 2))
+(same-set? '(1 2 3 3) '(2 1 1 1 2))
+(same-set? '(3 1) '(1 2 4 3))
+
+'("Tests for pairing two lists")
+(pairs '(a b c) '(1 2 3))
+(pairs '(a b c) '(1 2))
+(pairs '(a b) '(1 2 3))
