@@ -2,8 +2,8 @@
 Helper functions in functional programming language - Racket
 
 
-To Display Number of Lines in a Repository:
+## To Display Number of Lines in a Repository:
 - clone the repository in the desired location
 - open terminal and change directory
 - once inside the repository, type <br />
-&nbsp;&nbsp;&nbsp;&nbsp;git ls-files | xargs wc -l
+&nbsp;&nbsp;&nbsp;&nbsp;**git ls-files | xargs wc -l**
