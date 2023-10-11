@@ -7,6 +7,7 @@ Developer E-mail : neilmathias25@gmail.com
 |#
 
 (provide list_len)
+(provide contains)
 (provide index-of)
 (provide my-subset?)
 (provide same-set?)
