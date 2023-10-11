@@ -1,12 +1,12 @@
 #lang racket 
 
 #|
-Racket Part 1
+Racket Propositions
 Developer Name : Neil Mathias
 Developer E-mail : neilmathias25@gmail.com
 |#
 
-(require "racket_1.rkt")
+(require "list_operations.rkt")
 (provide is-digit?)
 (provide is-letter?)
 (provide is-vble?)

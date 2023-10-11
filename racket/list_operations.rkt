@@ -1,7 +1,7 @@
 #lang racket 
 
 #|
-Racket Part 1
+Racket List Operations
 Developer Name : Neil Mathias
 Developer E-mail : neilmathias25@gmail.com
 |#

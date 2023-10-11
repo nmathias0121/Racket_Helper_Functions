@@ -1,6 +1,6 @@
 #lang racket
-(require "racket_1.rkt")
-(require "racket_2.rkt")
+(require "list_operations.rkt")
+(require "propositions.rkt")
 
 '("Tests for length of list")
 (define list_1 (list 1 (list 2 3) 3 5 3))
