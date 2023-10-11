@@ -2,7 +2,7 @@
 Helper functions in functional programming language - Racket
 
 ## Install Racket
-In Linux
+In Linux <br />
 &nbsp;&nbsp;&nbsp;&nbsp;**sudo apt install racket**
 
 ## Run code:
