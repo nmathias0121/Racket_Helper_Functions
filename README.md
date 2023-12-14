@@ -1,12 +1,19 @@
 # Racket_Helper_Functions
-Helper functions in functional programming language - Racket
+Helper functions in functional programming language - Racket, Haskell
 
-## Install Racket
+## Install Racket, Haskell
 Follow Racket, Pollen Installation Documentation <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Racket Docs For Installation](https://docs.racket-lang.org/pollen/Installation.html)**
+<br /><br />
+Follow Haskell GHCup Installation Documentation <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Haskell GHCup Installation](https://www.haskell.org/ghcup/)**<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[GHCi commands](http://downloads.haskell.org/~ghc/6.6/docs/html/users_guide/ghci-commands.html)**
 
 ## Run code:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ racket file_name.rkt**
+Racket:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ racket file_name.rkt**<br /><br />
+Haskell: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ ghci file_name.hs**
 
 ## Files:
 - list_operations.rkt contains functions to find length of list, index of an element in a list, subset, pairs, determine duplicates, find elements with multiple occurences, sum of all elements in a list, maximum value 
