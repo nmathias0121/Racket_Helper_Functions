@@ -3,7 +3,7 @@ Helper functions in functional programming language - Racket
 
 ## Install Racket
 Follow Racket, Pollen Installation Documentation <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Racket Docs For Intallation](https://docs.racket-lang.org/pollen/Installation.html)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**[Racket Docs For Installation](https://docs.racket-lang.org/pollen/Installation.html)**
 
 ## Run code:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**$ racket file_name.rkt**
