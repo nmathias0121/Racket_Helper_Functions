@@ -27,6 +27,13 @@ get :: Int -> [a] -> a
 get n lst | listSize lst < n = error "there are not enough elements in this list"
           | otherwise = head (drop (n-1) lst)
 
+-- Find the minimum value of a list
+min_list :: [Int] -> Int
+min_list xs = minimum xs
+
+-- Find the maximum value of a list
+max_list :: [Int] -> Int
+max_list xs = maximum xs
 
 -- Exception if b or h non-positive
 triangle_area :: (Fractional a, Eq a, Ord a) => a -> a -> a
