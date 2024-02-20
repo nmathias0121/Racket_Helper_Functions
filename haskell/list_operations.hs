@@ -50,3 +50,23 @@ heron_area a b c | a <= 0  = error "heron_area: a must be positive"
                  | otherwise = sqrt value / 4
                         where
                             value = (a + b + c) * (c - (a - b)) * (c + (a - b)) * (a + (b - c))
+
+-- return true if string contains character
+contains :: Char -> [Char] -> Bool 
+contains ch s | s == "" = False 
+              | (head s) == ch = True 
+              | otherwise = contains ch (tail s)
+
+-- return true if all characters in string are unique
+is_unique :: [Char] -> Bool
+is_unique s | s == "" = True 
+            | contains (head s) (tail s) == True = False 
+            | contains (head s) (tail s) == False = True
+
+
+-- uniquify string : remove repititve consecutive characters in a string
+uniquify :: [Char] -> [Char]
+uniquify s | s == "" = ""
+           | tail s == "" = s       -- same as (take 1 s)
+           | contains (head s) (tail s) == True = uniquify (tail s)
+           | contains (head s) (tail s) == False = (take 1 s) ++ (uniquify (tail s))
