@@ -1,5 +1,5 @@
 # Racket_Helper_Functions
-Helper functions in functional programming language - Racket, Haskell
+Helper functions written in functional programming language - Racket, Haskell
 
 ## Install Racket, Haskell
 Follow Racket, Pollen Installation Documentation <br />
